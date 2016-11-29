@@ -4,20 +4,22 @@ module Classifiers.QLearning.Prelude
   , module Statistics.Distribution
   , module Statistics.Distribution.Normal
   , module System.Random.MWC
-  , Prelude.show
-  , Control.Exception.assert
-  , Data.List.intercalate
-  , (Data.Vector.!)
-  , (Data.Vector.//)
+  , module Data.Sequence
+  , module GHC.Float
+  , module Control.Exception
+  , module Data.List
+  , module Data.Vector
   ) where
 
 import Control.Monad.Primitive
 import Control.Exception (assert)
 import Data.List (intercalate)
-import Data.Vector ((!), (//))
+import Data.Vector (Vector, (!), (//))
+import Data.Sequence (Seq, (<|), (|>))
 import Statistics.Distribution
 import Statistics.Distribution.Normal
 import System.Random.MWC
+import GHC.Float
 
 import Prelude
 

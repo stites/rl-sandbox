@@ -15,6 +15,7 @@ dependencies:
   - primitive
   - statistics
   - vector
+  - containers
   - unordered-containers
 
 library:

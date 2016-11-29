@@ -19,6 +19,7 @@ library
     , primitive
     , statistics
     , vector
+    , containers
     , unordered-containers
   exposed-modules:
       Classifiers.QLearning
@@ -38,6 +39,7 @@ test-suite doctest
     , primitive
     , statistics
     , vector
+    , containers
     , unordered-containers
     , rl-sandbox
     , doctest
@@ -58,6 +60,7 @@ test-suite spec
     , primitive
     , statistics
     , vector
+    , containers
     , unordered-containers
     , rl-sandbox
     , hspec
@@ -78,6 +81,7 @@ benchmark convergence
     , primitive
     , statistics
     , vector
+    , containers
     , unordered-containers
     , Chart
     , Chart-diagrams
