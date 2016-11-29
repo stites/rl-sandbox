@@ -15,6 +15,14 @@ library
   ghc-options: -Wall
   build-depends:
       base
+    , mwc-random
+    , primitive
+    , statistics
+    , vector
+    , unordered-containers
+  exposed-modules:
+      Classifiers.QLearning
+      Classifiers.QLearning.Prelude
   default-language: Haskell2010
 
 test-suite doctest
@@ -26,6 +34,11 @@ test-suite doctest
   ghc-options: -Wall
   build-depends:
       base
+    , mwc-random
+    , primitive
+    , statistics
+    , vector
+    , unordered-containers
     , rl-sandbox
     , doctest
   other-modules:
@@ -41,8 +54,34 @@ test-suite spec
   ghc-options: -Wall
   build-depends:
       base
+    , mwc-random
+    , primitive
+    , statistics
+    , vector
+    , unordered-containers
     , rl-sandbox
     , hspec
   other-modules:
       DocTest
+  default-language: Haskell2010
+
+benchmark convergence
+  type: exitcode-stdio-1.0
+  main-is: Main.hs
+  hs-source-dirs:
+      benchmark/convergence
+  default-extensions: BangPatterns LambdaCase OverloadedStrings ViewPatterns
+  ghc-options: -Wall
+  build-depends:
+      base
+    , mwc-random
+    , primitive
+    , statistics
+    , vector
+    , unordered-containers
+    , Chart
+    , Chart-diagrams
+    , blaze-html
+    , blaze-markup
+    , rl-sandbox
   default-language: Haskell2010

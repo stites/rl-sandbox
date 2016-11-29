@@ -11,6 +11,11 @@ default-extensions:
 
 dependencies:
   - base
+  - mwc-random
+  - primitive
+  - statistics
+  - vector
+  - unordered-containers
 
 library:
   source-dirs: src
@@ -29,3 +34,15 @@ tests:
     dependencies:
       - rl-sandbox
       - hspec
+
+benchmarks:
+  convergence:
+    source-dirs: benchmark/convergence
+    main: Main.hs
+    dependencies:
+      - Chart
+      - Chart-diagrams
+      - blaze-html
+      - blaze-markup
+      - rl-sandbox
+
