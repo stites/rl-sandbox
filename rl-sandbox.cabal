@@ -12,7 +12,6 @@ library
   hs-source-dirs:
       src
   default-extensions: BangPatterns LambdaCase OverloadedStrings ViewPatterns
-  ghc-options: -Wall
   build-depends:
       base
     , mwc-random
@@ -21,6 +20,7 @@ library
     , vector
     , containers
     , unordered-containers
+    , text
   exposed-modules:
       Classifiers.QLearning
       Classifiers.QLearning.Prelude
@@ -32,7 +32,6 @@ test-suite doctest
   hs-source-dirs:
       test
   default-extensions: BangPatterns LambdaCase OverloadedStrings ViewPatterns
-  ghc-options: -Wall
   build-depends:
       base
     , mwc-random
@@ -41,6 +40,7 @@ test-suite doctest
     , vector
     , containers
     , unordered-containers
+    , text
     , rl-sandbox
     , doctest
   other-modules:
@@ -53,7 +53,6 @@ test-suite spec
   hs-source-dirs:
       test
   default-extensions: BangPatterns LambdaCase OverloadedStrings ViewPatterns
-  ghc-options: -Wall
   build-depends:
       base
     , mwc-random
@@ -62,6 +61,7 @@ test-suite spec
     , vector
     , containers
     , unordered-containers
+    , text
     , rl-sandbox
     , hspec
   other-modules:
@@ -74,7 +74,6 @@ benchmark convergence
   hs-source-dirs:
       benchmark/convergence
   default-extensions: BangPatterns LambdaCase OverloadedStrings ViewPatterns
-  ghc-options: -Wall
   build-depends:
       base
     , mwc-random
@@ -83,6 +82,7 @@ benchmark convergence
     , vector
     , containers
     , unordered-containers
+    , text
     , Chart
     , Chart-diagrams
     , blaze-html

@@ -4,19 +4,21 @@ import Graphics.Rendering.Chart.Easy
 import Graphics.Rendering.Chart.Backend.Diagrams
 import System.Random.MWC
 
-import Data.Monoid
-import Text.Blaze (ToMarkup(..), Markup)
+import Text.Blaze (Markup)
 import Text.Blaze.Html5 hiding (html, param, map, main)
 import Text.Blaze.Html.Renderer.Text (renderHtml)
 import qualified Text.Blaze.Html5 as H hiding (main)
 import qualified Text.Blaze.Html5.Attributes as A
 import qualified Data.Text.Lazy as T
 import qualified Data.Text.IO as TIO
-
+import Data.Sequence (Seq)
+import Data.Foldable (toList)
+import GHC.Float
+import Data.List (tails)
 
 import Classifiers.QLearning
 
-import Sentenai.Prelude
+import Prelude
 
 main :: IO ()
 main = do
@@ -75,10 +77,10 @@ main = do
     target = "out/"
 
     actions :: Seq (Action, Reward) -> [Double]
-    actions = toList . map (fromIntegral . fst)
+    actions = toList . fmap (fromIntegral . fst)
 
     rewards :: Seq (Action, Reward) -> [Double]
-    rewards = toList . map (float2Double . snd)
+    rewards = toList . fmap (float2Double . snd)
 
     plotEps :: (Interval -> Integer -> Interval)
             -> Integer -> (Integer, Float) -> (Integer, Float)

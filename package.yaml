@@ -1,8 +1,6 @@
 name: rl-sandbox
 version: 0.1.0.0
 
-ghc-options: -Wall
-
 default-extensions:
   - BangPatterns
   - LambdaCase
@@ -17,6 +15,7 @@ dependencies:
   - vector
   - containers
   - unordered-containers
+  - text
 
 library:
   source-dirs: src
